@@ -1,6 +1,6 @@
 # **Super Panda (Phaser Game)**
 
-**Super Panda** is a 2D platform game developed using **Phaser 3** for a Multimedia Technologies project.  
+**Super Panda** is a 2D basic and simple platform game developed using **Phaser 3** for a Multimedia Technologies project.  
 Guide the panda through different levels, avoid hazards, collect items, and reach the exit door to win.
 
 ---
