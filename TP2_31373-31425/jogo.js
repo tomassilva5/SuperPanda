@@ -14,7 +14,7 @@ const config = {
   scene: [MainMenuScene, LevelMenuScene, DefinicoesScene, Nivel1, Nivel2]
 };
 
-const game = new Phaser.Game(config); // Inicialização do jogo
+const game = new Phaser.Game(config); 
 
 // Ajusta o canvas para ser responsivo ao tamanho da janela
 window.onload = () => {

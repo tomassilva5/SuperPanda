@@ -28,7 +28,7 @@ class DefinicoesScene extends Phaser.Scene {
     const backgroundMusic = this.registry.get('backgroundMusic');
     if (backgroundMusic && !backgroundMusic.isPlaying) backgroundMusic.play();
 
-    // Botão de volume
+    // Botão para volume
     this.createStoneButton(
       width / 2, 300,
       `🔊Volume: ${this.volume}%`,
