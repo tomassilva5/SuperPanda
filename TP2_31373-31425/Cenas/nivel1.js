@@ -52,7 +52,7 @@ class Nivel1 extends Phaser.Scene {
         this.add.tileSprite(0, 0, 2000, 800, 'background').setOrigin(0).setDepth(0);
         this.sun = this.add.sprite(1450, 160, 'sol').setScale(0.6).setDepth(1);
 
-        // Nuvens móveis (atrás da pontuação)
+        // Nuvens móveis 
         this.clouds = [
             [0, 80], [300, 100], [580, 160], [880, 100], [1150, 200], [1450, 100], [1800, 80]
         ].map(([x, y]) => this.add.sprite(x, y, 'nuvem').setScale(0.6).setDepth(1));
@@ -80,7 +80,7 @@ class Nivel1 extends Phaser.Scene {
         this.lavas1.create(600, 780, 'lava').setScale(0.3).refreshBody();
         this.stones.create(300, 693, 'stone');
 
-        // Bambus colecionáveis com animação de flutuação
+        // Bambus colecionáveis com animação 
         this.bambuList = [ [300, 550], [600, 500], [1200, 640], [1700, 500], [1200, 400] ]
             .map(([x, y], i) => {
                 const bambu = this.bamboos.create(x, y, 'bambu').setScale(0.25).refreshBody();
@@ -95,7 +95,7 @@ class Nivel1 extends Phaser.Scene {
                 return bambu;
             });
 
-        // Controles e pontuação 
+        // Controlos e pontuação 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.scoreText = this.add.text(16, 16, 'pontuação: 0', {
             fontSize: '36px', fill: '#000', fontStyle: 'bold', fontFamily: 'Arial'

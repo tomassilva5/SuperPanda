@@ -21,20 +21,20 @@ class MainMenuScene extends Phaser.Scene {
       shadow: { offsetX: 4, offsetY: 4, color: '#000', blur: 4, fill: true }
     }).setOrigin(0.5);
 
-    // Volume e música de fundo
+    // Volume e música de fundo 
     const volume = this.registry.get('volume') || 50;
     this.sound.setVolume(volume / 100);
 
-    // Garante que a música começa mal o menu aparece
     let backgroundMusic = this.registry.get('backgroundMusic');
-    if (backgroundMusic) {
-      if (backgroundMusic.isPlaying) backgroundMusic.stop();
+    if (!backgroundMusic) {
+      backgroundMusic = this.sound.add('backgroundMusic', { loop: true, volume: volume / 100 });
+      backgroundMusic.play();
+      this.registry.set('backgroundMusic', backgroundMusic);
+    } else if (!backgroundMusic.isPlaying) {
+      backgroundMusic.play();
     }
-    backgroundMusic = this.sound.add('backgroundMusic', { loop: true, volume: volume / 100 });
-    backgroundMusic.play();
-    this.registry.set('backgroundMusic', backgroundMusic);
 
-    // Cria botões com texto e efeito hover
+    // Botão Jogar
     this.createStoneButton(
       width / 2, 350,
       'JOGAR',
@@ -45,6 +45,7 @@ class MainMenuScene extends Phaser.Scene {
       () => this.scene.start('LevelMenuScene')
     );
 
+    // Botão Definições
     this.createStoneButton(
       width / 2, 450,
       'DEFINIÇÕES',
